@@ -9,6 +9,8 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (>= 1.9.0)
+    capistrano-cookbook (0.2.1)
+      capistrano (~> 3.2)
     capistrano-harrow (0.5.1)
     i18n (0.7.0)
     kgio (2.10.0)
@@ -37,6 +39,7 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano
+  capistrano-cookbook
   sinatra
   unicorn
 

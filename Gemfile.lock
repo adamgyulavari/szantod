@@ -22,9 +22,16 @@ GEM
       tilt
     i18n (0.7.0)
     kgio (2.10.0)
+    mail (2.6.4)
+      mime-types (>= 1.16, < 4)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.1.1)
+    pony (1.11)
+      mail (>= 2.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -52,6 +59,7 @@ DEPENDENCIES
   capistrano-cookbook
   capistrano-rbenv
   haml
+  pony
   sass
   sinatra
   unicorn

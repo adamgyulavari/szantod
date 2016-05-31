@@ -86,13 +86,19 @@
               %a{:href => "#arak"} ÁRAK
             %li
               %a{:href => "#kapcsolat"} KAPCSOLAT
+    - if @sent
+      #sent.alert.alert-success
+        %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %strong Elküldve!
+        Leveled sikeresen elküldve, hamarosan válaszolok!
     / Container (About Section)
     #ahazrol.container-fluid
       .row
         .col-sm-8
           %h2{:style => "text-align: center;"} A házról
           %br/
-          %p{:style => "font-size:16px; line-height:40px"} Több, mint 20 éves többször felújított retró hangulatú családi nyaraló hatalmas, csendes, napsütötte és kellően árnyékos udvarral, három külön hálószobával és egy tágas nappali-étkezővel.
+          %p{:style => "font-size:16px; line-height:40px"} Több, mint 20 éves többször felújított retró hangulatú családi nyaraló hatalmas, csendes, napsütötte és kellően árnyékos udvarral, három külön hálószobával és egy tágas nappali-étkezővel pár perc sétára a Balaton parttól.
           %br/
         .col-sm-4
           %img{:src => "images/asztal.jpg"}/
@@ -132,7 +138,7 @@
             %a{href: 'http://sziget.hu/balatonsound', target: '_blank'} Balaton Sound
             ). Érdekes látványosság a
             %a{href: 'http://www.szantodpuszta.hu/', target: '_blank'} Szántódpuszta Idegenforgalmi és Kulturális Központ
-            \.
+            \. A szántódi révből komppal Tihany is remek kirándulóhely.
       %br/
       %br/
     / Container (Portfolio Section)
@@ -197,16 +203,17 @@
             %span.glyphicon.glyphicon-envelope
             %img{src: 'images/email.png', style: 'margin-top:-5px;'}
         .col-sm-7.slideanim
-          .row
-            .col-sm-6.form-group
-              %input#name.form-control{:name => "name", :placeholder => "Kérlek add meg a neved", :required => "", :type => "text"}/
-            .col-sm-6.form-group
-              %input#email.form-control{:name => "email", :placeholder => "Az email címed", :required => "", :type => "email"}/
-          %textarea#comments.form-control{:name => "comments", :placeholder => "Kérdezz bármit!", :rows => "5"}
-          %br/
-          .row
-            .col-sm-12.form-group
-              %button.btn.btn-default.pull-right{:type => "submit"} Send
+          %form{method: 'post', action: '/contact'}
+            .row
+              .col-sm-6.form-group
+                %input#name.form-control{:name => "name", :placeholder => "Kérlek add meg a neved", :required => "", :type => "text"}/
+              .col-sm-6.form-group
+                %input#email.form-control{:name => "email", :placeholder => "Az email címed", :required => "", :type => "email"}/
+            %textarea#comments.form-control{:name => "comments", :placeholder => "Kérdezz bármit!", :rows => "5"}
+            %br/
+            .row
+              .col-sm-12.form-group
+                %button.btn.btn-default.pull-right{:type => "submit"} Elküld
     #googleMap{:style => "height:400px;width:100%;"}
     / Add Google Maps
     %script{:src => "http://maps.googleapis.com/maps/api/js"}
@@ -250,7 +257,7 @@
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) {return;}
       js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js";
+      js.src = "//connect.facebook.net/hu_HU/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
       $(document).ready(function(){

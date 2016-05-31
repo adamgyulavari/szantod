@@ -7,11 +7,14 @@
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
+set :user, 'deployer'
+
 server 'szantod.mobil.ninja', user: fetch(:user), roles: %w{app web}
 
 set :server_name, 'szantod.mobil.ninja'
 set :full_app_name, 'szantod_production'
 set :unicorn_worker_count, 1
+set :rails_env, 'production'
 
 # role-based syntax
 # ==================

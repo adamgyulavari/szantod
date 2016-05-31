@@ -1,0 +1,288 @@
+!!!
+%html{:lang => "en"}
+  %head
+    / Theme Made By www.w3schools.com - No Copyright
+    %title Szántód, Rege utca 41. - Nyaraló nagycsaládosoknak és baráti társaságoknak
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %link{:href => "/stylesheets/bootstrap.css", :rel => "stylesheet"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Montserrat", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Lato", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "js/jquery-1.11.3.min.js"}
+    %script{:src => "js/bootstrap.js"}
+    %link{:href => "/stylesheets/camera.css", :rel => "stylesheet"}/
+    %link{:href => "/stylesheets/owl.carousel.css", :rel => "stylesheet"}/
+    %link{:href => "/stylesheets/style.css", :rel => "stylesheet"}/
+    %link{:href => "/stylesheets/overrides.css", :rel => "stylesheet"}/
+    %script{:src => "js/jquery-migrate-1.2.1.js"}
+    %script{:src => "js/superfish.js"}
+    %script{:src => "js/jquery.ui.totop.js"}
+    %script{:src => "js/jquery.easing.1.3.js"}
+    %script{:src => "js/owl.carousel.js"}
+    %script{:src => "js/camera.js"}
+    / [if (gt IE 9)|!(IE)]><!
+    / <![endif]
+    :javascript
+      $(document).ready(function(){
+      jQuery('#camera_wrap').camera({
+      	loader: false,
+      	pagination: false ,
+      	minHeight: '450',
+      	thumbnails: false,
+      	height: '48.375%',
+      	caption: true,
+      	navigation: true,
+      	fx: 'mosaic'
+      });
+      /*carousel*/
+      var owl=$("#owl");
+      	owl.owlCarousel({
+      	items : 2, //10 items above 1000px browser width
+      	itemsDesktop : [995,2], //5 items between 1000px and 901px
+      	itemsDesktopSmall : [767, 2], // betweem 900px and 601px
+      	itemsTablet: [700, 2], //2 items between 600 and 0
+      	itemsMobile : [479, 1], // itemsMobile disabled - inherit from itemsTablet option
+      	navigation : true,
+      	pagination : false
+      	});
+      $().UItoTop({ easingType: 'easeOutQuart' });
+      });
+  %body#myPage.page1{"data-offset" => "60", "data-spy" => "scroll", "data-target" => ".navbar"}
+    \-
+    / <body class="page1" id="top">
+    / ==============================header=================================
+    %header
+      .container_12
+        .grid_12
+          .menu_block
+            .clear
+        .grid_12
+    .slider_wrapper
+      #camera_wrap
+        %div{"data-src" => "images/balcsib1.jpg"}
+        %div{"data-src" => "images/balcsib2.jpg"}
+        %div{"data-src" => "images/balcsi05.jpg"}
+        %div{"data-src" => "images/balcsib4.jpg"}
+        %div{"data-src" => "images/balcsib5.jpg"}
+        %div{"data-src" => "images/balcsib6.jpg"}
+    %nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => "#myNavbar", "data-toggle" => "collapse", :type => "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+        #myNavbar.collapse.navbar-collapse
+          .nav.navbar-nav
+            %h1 Szántód, Rege utca 41.
+          %ul.nav.navbar-nav.navbar-right
+            %li
+              %a{:href => "#ahazrol"} A HÁZRÓL
+            %li
+              %a{:href => "#lehetosegek"} LEHETŐSÉGEK
+            %li
+              %a{:href => "#foglaltsag"} FOGLALTSÁG
+            %li
+              %a{:href => "#arak"} ÁRAK
+            %li
+              %a{:href => "#kapcsolat"} KAPCSOLAT
+    / Container (About Section)
+    #ahazrol.container-fluid
+      .row
+        .col-sm-8
+          %h2{:style => "text-align: center;"} A házról
+          %br/
+          %p{:style => "font-size:16px; line-height:40px"} Több, mint 20 éves többször felújított retró hangulatú családi nyaraló hatalmas, csendes, napsütötte és kellően árnyékos udvarral, három külön hálószobával és egy tágas nappali-étkezővel.
+          %br/
+        .col-sm-4
+          %img{:src => "images/asztal.jpg"}/
+    .container-fluid.bg-grey
+      .row
+        .col-sm-4
+          %img{:src => "images/balcsi_allo.jpg"}/
+        .col-sm-8
+          %h2 SZOBÁK
+          %h4 NAPPALI
+          %p Tágas és napfényes nappali, amelyben egy egész társaság kényelmesen elfér. Egy hűtő is található itt az italoknak.
+          %h4 KONYHA
+          %p A konyha pici, de kellően felszerelt: sütőlap, mikró, hűtő, edények, evőeszközök, poharak.
+          %h4 HÁLÓSZOBÁK
+          %p Egy kicsi 2 ágyas, két nagyobb 4 ágyas háló.
+    / Container (Services Section)
+    #lehetosegek.container-fluid.text-center
+      %h2 LEHETŐSÉGEK
+      %br/
+      .row.slideanim
+        .col-sm-4
+          %span.glyphicon.glyphicon-pushpin.logo-small
+          %h4 A Balaton alig pár perc sétára
+          %p Az egyik szántódi szabadstrandtól alig pár perc sétára található a ház, távol főúttól, így a ház és az udvar is kellemes, csendes környezettel rendelkezik.
+        .col-sm-4
+          %span.glyphicon.glyphicon-cutlery.logo-small
+          %h4 Az üdölőfalu
+          %p Szántód egy kisebb üdülőfalu a Balaton partján, így minden közel van. Tíz perc sétára egy nagy SPAR található, mellette éjjel-nappali dohány- és italbolttal, szintén ilyen gyorsan megközelíthető a vasútállomás. A szántódi rév a hosszan elnyúló falu másik végén, 20 percre található gyalogosan, viszont a Parti Villasoron lehet végigsétálni.
+        .col-sm-4
+          %span.glyphicon.glyphicon-eye-open.logo-small
+          %h4 Szomszédok
+          %p
+            Zamárdi és Balatonföldvár pár perc távolságra van autóval, ahol remek éttermek (
+            %a{href: 'http://www.mauro.hu/', target: '_blank'} Mauro
+            ) találhatóak és az éjszakai élet szerelmesei is megtalálhatják, amit keresnek
+            (
+            %a{href: 'http://sziget.hu/balatonsound', target: '_blank'} Balaton Sound
+            ). Érdekes látványosság a
+            %a{href: 'http://www.szantodpuszta.hu/', target: '_blank'} Szántódpuszta Idegenforgalmi és Kulturális Központ
+            \.
+      %br/
+      %br/
+    / Container (Portfolio Section)
+    #foglaltsag.container-fluid.text-center.bg-grey
+      %h2 Foglaltság
+      %h4 Itt láthatod, hogy épp mikor szabad a nyaraló
+      .row.text-center.slideanim
+        .col-sm-12
+          %iframe{:frameborder => "0", :height => "600", :scrolling => "no", :src => "https://calendar.google.com/calendar/embed?height=600&wkst=2&hl=hu&bgcolor=%23f6f6f6&ctz=Europe%2FBudapest", :style => "border-width:0", :width => "800"}
+        -# .col-sm-4
+        -#   .thumbnail
+        -#     %img{:alt => "Paris", :height => "300", :src => "images/page2_img1.jpg", :width => "400"}/
+        -#     %p
+        -#       %strong Trava
+        -#     %p Travel Website
+        -# .col-sm-4
+        -#   .thumbnail
+        -#     %img{:alt => "New York", :height => "300", :src => "images/page2_img2.jpg", :width => "400"}/
+        -#     %p
+        -#       %strong Sea
+        -#     %p Tourism Website
+        -# .col-sm-4
+        -#   .thumbnail
+        -#     %img{:alt => "San Francisco", :height => "300", :src => "images/page2_img3.jpg", :width => "400"}/
+        -#     %p
+        -#       %strong Your Design
+        -#     %p Architecture Website
+      %br/
+    / Left and right controls
+    / Container (Pricing Section)
+    #arak.container-fluid
+      .text-center
+        %h2 ÁRAK
+        %h4 egy ár mindenek felett
+      .row.slideanim
+        .col-sm-4.col-xs-12
+        .col-sm-4.col-xs-12
+          .panel.panel-default.text-center
+            .panel-heading
+              %h1 HÁZ
+            .panel-body
+              %p max 10 fő
+              %p idegenforgalmi adót nem tartalmaz
+              %p ágynemű igény szerint
+            .panel-footer.plan
+              %h3 15 000 HUF
+              %h4 naponta
+        .col-sm-4.col-xs-12
+    / Container (Contact Section)
+    #kapcsolat.container-fluid.bg-grey
+      %h2.text-center KAPCSOLAT
+      .row
+        .col-sm-5
+          %p Kérdésed van? Keress bátran!
+          %p
+            %span.glyphicon.glyphicon-map-marker
+            Szántód, Rege utca 41.
+          %p
+            %span.glyphicon.glyphicon-phone
+            +36 30 326 9872
+          %p
+            %span.glyphicon.glyphicon-envelope
+            %img{src: 'images/email.png', style: 'margin-top:-5px;'}
+        .col-sm-7.slideanim
+          .row
+            .col-sm-6.form-group
+              %input#name.form-control{:name => "name", :placeholder => "Kérlek add meg a neved", :required => "", :type => "text"}/
+            .col-sm-6.form-group
+              %input#email.form-control{:name => "email", :placeholder => "Az email címed", :required => "", :type => "email"}/
+          %textarea#comments.form-control{:name => "comments", :placeholder => "Kérdezz bármit!", :rows => "5"}
+          %br/
+          .row
+            .col-sm-12.form-group
+              %button.btn.btn-default.pull-right{:type => "submit"} Send
+    #googleMap{:style => "height:400px;width:100%;"}
+    / Add Google Maps
+    %script{:src => "http://maps.googleapis.com/maps/api/js"}
+    :javascript
+      var myCenter = new google.maps.LatLng(46.8682436 , 17.9052683);
+
+      function initialize() {
+      var mapProp = {
+        center:myCenter,
+        zoom:12,
+        scrollwheel:false,
+        draggable:false,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+
+      var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+      var marker = new google.maps.Marker({
+        position:myCenter,
+        });
+
+      marker.setMap(map);
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+    %footer{:style => "text-align:center; color: white; background-color:  rgba(0,33,65);"}
+      %span.glyphicon.glyphicon-share{:style => "color: white; font-size: 40px; padding-top: 50px;"}
+      %p
+        %strong Oszd meg a barátaiddal is!
+      .fb-like{"data-share" => "true", "data-show-faces" => "true", "data-width" => "450", 'data-colorscheme' => 'dark'}
+    :javascript
+      window.fbAsyncInit = function() {
+      FB.init({
+      appId      : '672355386244762',
+      xfbml      : true,
+      version    : 'v2.6'
+      });
+      };
+
+      (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      $(document).ready(function(){
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        });
+
+        $(window).scroll(function() {
+          $(".slideanim").each(function(){
+            var pos = $(this).offset().top;
+
+            var winTop = $(window).scrollTop();
+              if (pos < winTop + 600) {
+                $(this).addClass("slide");
+              }
+          });
+        });
+      })
+  / Mirrored from www.w3schools.com/bootstrap/tryit.asp?filename=trybs_theme_company_complete_animation by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Nov 2015 15:50:39 GMT

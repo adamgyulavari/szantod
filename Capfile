@@ -3,7 +3,13 @@ require "capistrano/setup"
 
 # Include default deployment tasks
 require "capistrano/deploy"
-require 'capistrano/cookbook'
+
+require 'capistrano/cookbook/check_revision'
+require 'capistrano/cookbook/compile_assets_locally'
+require 'capistrano/cookbook/logs'
+require 'capistrano/cookbook/nginx'
+require 'capistrano/cookbook/restart'
+require 'capistrano/cookbook/setup_config'
 
 # Include tasks from other gems included in your Gemfile
 #

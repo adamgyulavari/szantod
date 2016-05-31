@@ -34,8 +34,34 @@ set :rbenv_roles, :all # default value
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
 # Default value for linked_dirs is []
-# set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system')
+set(
+  :config_files,
+  %w(
+  nginx.conf
+  database.example.yml
+  log_rotation
+  unicorn.rb
+  unicorn_init.sh
+))
 
+set(
+  :symlinks,
+  [
+    {
+      source: "nginx.conf",
+      link: "/etc/nginx/sites-enabled/{{full_app_name}}"
+    },
+    {
+      source: "unicorn_init.sh",
+      link: "/etc/init.d/unicorn_{{full_app_name}}"
+    },
+    {
+      source: "log_rotation",
+     link: "/etc/logrotate.d/{{full_app_name}}"
+    }
+  ]
+)
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 

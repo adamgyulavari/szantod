@@ -9,8 +9,8 @@ class Szantod < Sinatra::Base
   post '/contact' do
     Pony.mail to: 'szantod@mobil.ninja',
               from: "#{params[:name]} <#{params[:email]}>",
-              subject: params[:comment][0..40],
-              body: params[:comment]
+              subject: params[:message][0..40],
+              body: params[:message]
     @sent = true
     haml :index
   end
